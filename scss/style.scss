@@ -1,0 +1,810 @@
+/* Override Bootstrap */
+$body-color: #0e0e0e;
+
+:root {
+    font-size: 16px;
+}
+
+/* Import boostrap */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$naruto-orange: #df4b32;
+$naruto-yellow: #efb531;
+
+/* Naruto Fonts */
+@font-face {
+    font-family: "NinjaNaruto";
+    src: url("../res/fonts/naruto.woff") format("woff"), 
+      url("../res/fonts/naruto.woff2") format("woff2"); 
+    font-weight: normal;
+    font-style: normal;
+}  
+
+/* Add 'font-naruto' class to elements */
+.font-naruto {
+    font-family: 'NinjaNaruto' !important;        
+}  
+
+.ja-font {
+    font-family: 'Sawarabi Mincho', sans-serif !important;
+}
+
+/* Only for landscape */
+.potrait-warning {
+    z-index: 2000;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4; 
+    text-align: center;
+    transition: all 1s ease 0.5s; 
+
+    span {
+        margin: 0 auto;
+        font-size: 2rem;
+        color: #2e2e2e;
+    }
+
+    @media screen and (orientation:landscape) { 
+        opacity: 0;
+        z-index: -1000;
+     }
+}
+
+
+html {
+    background-color: rgb(20, 20, 20);
+    overflow: hidden; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: url(../res/img/clouds.png);
+    background-size: contain;
+    animation: slideBg 120s linear infinite; 
+   
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.reset-mp {
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-title {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    padding-top: 2.5rem;
+    margin: 1rem auto;
+    background: url(../res/img/scroll-border.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+
+    span {
+        letter-spacing: 0.3rem;
+        font-size: 2rem;
+        color: #e2e2e2;
+        font-family: 'NinjaNaruto';
+    }
+
+}
+
+/*  Contains All Member gets overlayed by '.overlay-dark' class when '.member-overlay' gets background*/
+.member-container {
+    position: sticky;
+    z-index: 100;
+    color: #fff;
+    margin: auto 0;
+    height: 100vh;
+}
+
+/* To darken orignal image */
+.overlay-dark {
+    z-index: 80;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* Place member img over .overlay-dark */
+.member-overlay {
+    z-index: 300;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom; 
+    transition: all 1s ease; 
+}
+
+/* For .overlay-dark class to darken the bg*/
+.background-dark {
+    z-index: 200 !important;
+    background: rgba(10, 10, 10, 0.9);
+}
+
+/* All members classes */
+.all {
+    background-image: url(../res/img/all.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+.pain {
+    background-image: url(../res/img/pain-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+.konan {
+    background-image: url(../res/img/konan-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+.deidara {
+    background-image: url(../res/img/deidara-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+.obito {
+    background-image: url(../res/img/obito-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+.sasori {
+    background-image: url(../res/img/sasori-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+.itachi {
+    background-image: url(../res/img/itachi-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+.kakuzu {
+    background-image: url(../res/img/kakuzu-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+.hidan {
+    background-image: url(../res/img/hidan-focus-transparent.png);
+    background-repeat: no-repeat; 
+    background-size: contain;
+    background-position: center bottom; 
+}
+
+/* Overlay on member */
+.member-info-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 350;
+
+    .info-panel {   
+        position: fixed;
+
+        .info-lines {
+            display: block;
+            color: white;
+        }
+    }
+
+    /* Stylize for Pain */
+    #pain-info {
+        display: none;
+    }
+
+    .pain-info {
+        display: block;
+        position: absolute;
+        top: 20%;
+        left: 7%;
+
+        .info-tag {
+            display: inline-block;
+            min-width: 70px;
+            color: #f4f4f4;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+        .info-text {
+            display: inline-block;
+            color: #b82c13;
+            text-shadow: 0 0 30px white;
+            display: inline-block;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+    }
+
+    .story-pain {        
+        display: block;
+        position: absolute;
+        top: 14%;
+        right: 12%;
+        width: 150px;
+        color: white;
+        font-family: 'Long Cang', cursive;
+    }
+
+    /* Stylize for Konan */
+    #konan-info {
+        display: none;
+    }
+
+    .konan-info {
+        display: block;
+        position: absolute;
+        top: 7%;
+        left: 5%;
+
+        .info-tag {
+            display: inline-block;
+            min-width: 70px;
+            color: #f4f4f4;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+        .info-text {
+            display: inline-block;
+            color: #b82c13;
+            text-shadow: 0 0 30px white;
+            display: inline-block;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+    }
+
+    .story-konan {        
+        display: block;
+        position: absolute;
+        bottom: 10%;
+        right: 7%;
+        width: 150px;
+        color: white;
+        font-family: 'Long Cang', cursive;
+    }  
+
+    /* Stylize for Deidara */
+    #deidara-info {
+        display: none;
+    }
+
+    .deidara-info {
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 8%;
+
+        .info-tag {
+            display: inline-block;
+            min-width: 70px;
+            color: #f4f4f4;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+        .info-text {
+            color: #b82c13;
+            text-shadow: 0 0 30px white;
+            display: inline-block;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+    }
+
+    .story-deidara {        
+        display: block;
+        position: absolute;
+        bottom: 10%;
+        left: 20%;
+        width: 200px;
+        color: white;
+        font-family: 'Long Cang', cursive;
+    }    
+
+
+    /* Stylize for Obito */
+    #obito-info {
+        display: none;
+    }
+
+    .obito-info {
+        display: block;
+        position: absolute;
+        top: 10%;
+        right: 20%;
+
+        .info-tag {
+            display: inline-block;
+            min-width: 70px;
+            color: #f4f4f4;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+        .info-text {
+            color: #b82c13;
+            text-shadow: 0 0 30px white;
+            display: inline-block;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+    }
+
+    .story-obito {        
+        display: block;
+        position: absolute;
+        bottom: 5%;
+        right: 12%;
+        width: 200px;
+        color: white;
+        font-family: 'Long Cang', cursive;
+        font-size: 1.1rem;
+    }    
+
+
+    /* Stylize for Itachi */
+    #itachi-info {
+        display: none;
+    }
+
+    .itachi-info {
+        display: block;
+        position: absolute;
+        top: 10%;
+        right: 19%;
+
+        .info-tag {
+            display: inline-block;
+            min-width: 70px;
+            color: #f4f4f4;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+        .info-text {
+            color: #b82c13;
+            text-shadow: 0 0 30px white;
+            display: inline-block;
+            font-family: 'Share Tech Mono', sans-serif;
+        }
+    }
+
+    .story-itachi {        
+        display: block;
+        position: absolute;
+        bottom: 20%;
+        right: 12%;
+        width: 200px;
+        color: white;
+        font-family: 'Long Cang', cursive;
+    }    
+    
+        /* Stylize for Hidan */
+        #hidan-info {
+            display: none;
+        }
+    
+        .hidan-info {
+            display: block;
+            position: absolute;
+            top: 10%;
+            left: 5%;
+    
+            .info-tag {
+                display: inline-block;
+                min-width: 70px;
+                color: #f4f4f4;
+                font-family: 'Share Tech Mono', sans-serif;
+            }
+            .info-text {
+                display: inline-block;
+                color: #b82c13;
+                font-family: 'Share Tech Mono', sans-serif;
+            }
+        }
+    
+        .story-hidan {        
+            display: block;
+            position: absolute;
+            bottom: 5%;
+            left: 22%;
+            font-size: 1.1rem;
+            height: auto;
+            width: 200px;
+            color: white;
+            font-family: 'Long Cang', cursive;
+        }     
+        
+        #unset-info {
+            display: none;
+            justify-content: center;
+            align-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .unset-info {
+            text-align: center;
+
+            span {
+                align-self: center;
+                font-size: 3rem;
+                color: #fff;
+                font-family: 'Long Cang', cursive;
+            }
+        }
+}
+
+/* Trigger side-bar members list */
+.trigger-sidebar {
+    z-index: 400;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 1rem;
+    height: 100vh;
+    content: '';
+    writing-mode: vertical-rl;
+    text-orientation: upright; 
+    background: rgba(211, 10, 10, 0.4);
+    transition: all 0.3s linear;
+
+    span {
+        cursor: pointer;
+        font-size: 2rem;
+        margin: 0 auto;
+        color: #ffffffda;
+    }
+
+    &:hover {
+        background: rgba(211, 10, 10, 0.25);
+    }
+}
+
+
+/* Side-bar for showing list of members */
+.sidebar {
+    display: none; // Grid
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 400;
+    justify-content: center;
+    align-content: center;
+    background: #000000a2;
+    height: 100vh;
+
+    
+    .close-btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -1rem;
+        left: -3.4rem;
+        opacity: 1;
+        background: #000000a2;
+        padding: 1.7rem;
+        border-radius: 5px 0 0 5px;
+        transition: all 0.5s ease;
+
+        &::before, &::after {
+            position: absolute;
+            top: 0.7rem;
+            left: 1.7rem;
+            content: '';
+            height: 2rem;
+            width: 0.1rem;
+            background-color: #df4b32;
+            transition: all 0.5s ease;
+        }
+    
+        &::before {
+            transform: rotate(45deg);
+        }
+    
+        &::after {
+            transform: rotate(-45deg);
+        }
+    
+        &:hover::before, &:hover::after {
+            background-color: #771f0f;
+        }
+    }
+    
+    ul {
+       margin: 0;
+       padding: 0;
+       list-style-type: none;
+       transition: width 0.7s ease;
+       overflow-y: scroll;
+       scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            width: 1rem;
+        }
+        
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+        
+        &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        }
+
+        li {
+        cursor: pointer;
+        padding: 1rem 1rem 1rem 2rem;
+        color: #fefefe;
+        font-size: 1.5rem;
+        font-family: 'Long Cang', sans-serif;
+        transition: all 0.4s linear 0.1s;
+        
+            &:hover {
+            color: rgb(255, 81, 0);
+            }
+        }
+    }
+}
+
+.fullscreen-menu {
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.9);
+    top: 0;
+    left: 0;
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        padding: 2rem;
+        margin: auto 0;
+        list-style-type: none;
+    }
+
+    li {
+        text-align: center;
+    }
+
+    li a {
+        font-family: 'NinjaNaruto', Arial, Helvetica, sans-serif;
+        word-spacing: 0.3rem;
+        font-size: 2rem;
+        color: hsl(9, 69%, 50%);    
+        transition: all 0.4s ease 0.1s;   
+          
+        &:hover {
+            color: #332a2a;
+            text-decoration: none;
+        }
+    }
+    
+    a {
+        display: inline-block;
+        color: #f4f4f4;
+        transition: color 0.4s ease 0.1s;
+    }
+
+    a:hover, a:focus {
+        color: hsl(9, 69%, 50%);
+        text-decoration: none;
+    }
+    
+    p {
+        position: fixed;
+        left: -100%;
+        margin-left: 1.5rem;
+        bottom: 0; 
+        word-spacing: 0.3rem;
+        font-family: 'Poiret One', cursive;
+        width: 50%;
+        color: #dbd8ca;    
+    }
+
+}
+
+/* Trigger Color Scheme */
+$t-main: #ce2c0f;
+$t-main-hover:#2e2e2e;
+$t-border: #f04729;
+
+.animTriggger {
+    left: unset !important;
+    right: 40px;
+    transform: rotateX(70deg) rotate3d(0, 0, 1, 360deg); 
+}
+
+.trigger-button {
+    z-index: 2500; // Highest Priority
+    content: '';
+    position: fixed;
+    border: none;
+    bottom: 5px;
+    left: 40px;
+    padding: 2rem;
+    background: url(/res/img/trigger.png);
+    background-repeat: no-repeat;
+    background-origin: center center;
+    background-position: 50% 50%;
+    background-size: 100%;
+    transform: rotateX(70deg);
+    transition: all 0.5s ease-out;
+    
+    &::before {
+        clear: both;
+        content: '';
+        position: absolute;
+        left: -0.6rem;
+        top: -0.6rem;
+        padding: 2.4rem;
+        border-radius: 50%;
+        border: 0.2rem solid $t-border; 
+        transition: visibility 0.6s ease;
+        animation: sizeUp 1s linear infinite;
+    }
+
+    &::after {
+        clear: both;
+        content: '';
+        position: absolute;
+        left: -1rem;
+        top: -1rem;
+        padding: 2.8rem;
+        border-radius: 50%;
+        border: 0.2rem solid $t-border; 
+        transition: visibility 0.6s linear;      
+        animation: sizeUp 1s ease infinite;
+    }
+
+    &:hover {
+        transform: rotateX(70deg) rotate3d(0, 0, 1, 360deg); 
+    }
+
+    &:hover, &:focus {
+        outline: none;
+    } 
+}
+
+// Animation for trigger button 
+.animTrigger {
+    transform: rotateX(70deg) rotate3d(0, 0, 1, 360deg); 
+}
+
+@keyframes slideBg {
+    100%{
+        background-position:-3000px 0;
+    }
+}
+
+@keyframes animFullscreen-menu {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes customAnim {
+  from {
+      opacity: 0;
+      width: 0;
+  }
+  to {
+      opacity: 1;
+      width: auto;
+  }
+}
+
+// SizeUp for rings
+@keyframes sizeUp {
+    0% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+// Opacity 
+@keyframes fadeIn {
+    from {
+        opacity: 0.4;
+    }
+    top {
+        opacity: 1;
+    }
+}
+
+
+/* Our mixin positions a copy of our text
+directly on our existing text, while
+also setting content to the appropriate
+text set in the data-text attribute. */
+@mixin glitchCopy { 
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch {
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+
+    &::before{
+        @include glitchCopy;
+        left: 2px;
+        text-shadow: -2px 0 #ff00c1;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    &::after {
+        @include glitchCopy;
+        left: -2px;
+        text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+        animation: glitch-anim2 1s infinite linear alternate-reverse;
+    }
+}
+
+@keyframes glitch-anim {
+    $steps: 20;
+        @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+            transform: skew((random(100) / 100) + deg);
+        }
+    }
+}
+
+@keyframes glitch-anim2 {
+    $steps: 20;
+        @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+            transform: skew((random(100) / 100) + deg);
+        }
+    }
+}
+
+@keyframes glitch-skew {
+    $steps: 10;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            transform: skew((random(10) - 5) + deg);
+        }
+    }
+}

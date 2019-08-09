@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Akatsuki Squad - Mobile Legends Bang Bang</title>
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Official Akatsuki Squad. Mobile Legends Bang Bang.">
+    <meta name="keywords" content="Mobile Legends, Bang Bang, ML, MLBB, Mobile Legends Bang Bang, Esports, MPL, Akatsuki Squad, Akatsuki">
+    <meta name="author" content="hrr817">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Akatsuki Squad - MLBB">
+    <meta property="og:site_name" content="Akatsuki">
+    <meta property="og:url" content="https://akatsukisquad.ml">
+    <meta property="og:description" content="Official Akatsuki Squad. Mobile Legends Bang Bang.">
+    <meta property="og:type" content="website">
+    
+    <!-- Debug CSS -->
+    <!-- <link rel="stylesheet" href="./res/styles/debug.css"> -->
+
+    <link rel="shortcut icon" href="./res/img/icon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- Laoding Bar -->
+    <style>
+        /* Loading screen */
+        #progress {
+            z-index: 3000;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #f4f4f4;
+        }
+
+        #bar {
+            position: absolute;
+            top: 55%;
+            left: 0;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.795);
+            transition: width 1s ease;
+            opacity: 1;
+        }
+
+        #percent {
+            color: #000000ce;
+            transition: width 0.5s ease;
+            font-family: 'Courier New', Courier, monospace;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid reset-mp">
+        <!-- Loading Screen, z-index of 3000  -->
+        <div id="progress">
+            <div id="bar"></div>
+        </div>
+
+
+        <!-- Potrait Warning, z-index of 2000 -->
+        <div class="potrait-warning"><span>Turn into Landscape Mode.</span></div>
+        
+        <!-- Conatiner for Members takes full screen, z-index is 100 -->
+        <div class="member-container all"></div>
+        
+        <!-- Fixed at right side, z-index is 400 -->
+        <div class="trigger-sidebar"><span class="ja-font">アカツキ</span></div>
+        <div class="sidebar">
+            <div class="close-btn" id="closeSidebar"></div>
+            <ul>
+                <li id="pain">Yahiko</li>
+                <li id="itachi" class="ja-font">サンマメルツ</li>
+                <li id="deidara">NINJA</li>
+                <li id="obito" class="ja-font">うちはマダラ</li>
+                <li class="unset">Ritik Mk.</li>
+                <li id="hidan" class="ja-font">[PT] キリン</li>
+                <li class="unset">Goku san</li>
+                <li class="unset">Floki</li>
+                <li class="unset">rH-n</li>
+              <!--  <li id="all">All</li> -->
+            </ul>
+        </div>
+        
+        <!-- Members Info, z-index is 250 -->
+        <div class="member-info-container">
+
+            <!-- Pain -->
+            <div id="pain-info">
+            <div class="info-panel pain-info">
+                <div class="info-lines"><span class="info-tag">IGN</span><span class="info-text">Yahiko</span></div>
+                <div class="info-lines"><span class="info-tag">Gender</span><span class="info-text">Male</span></div>
+                <div class="info-lines"><span class="info-tag">Rank</span><span class="info-text glitch" data-text="Mythic">Mythic</span></div>
+                <div class="info-lines"><span class="info-tag">Roles</span><span class="info-text">Mage</span></div>
+            </div>
+            <div class="info-panel story-pain">Don't have any material to write here, so send me what to show here. Lorem, ipsum
+                dolor sit amet consectetur adipisicing elit. Voluptatum necessitatibus numquam veniam vitae nulla dolor.</div>
+            </div>
+
+            <!-- Konan -->
+            <div id="konan-info">
+                <div class="info-panel konan-info">
+                    <div class="info-lines"><span class="info-tag">IGN</span><span class="info-text">N/A</span></div>
+                    <div class="info-lines"><span class="info-tag">Gender</span><span class="info-text">Female</span></div>
+                    <div class="info-lines"><span class="info-tag">Rank</span><span class="info-text glitch" data-text="Mythic">Mythic</span></div>
+                    <div class="info-lines"><span class="info-tag">Roles</span><span class="info-text">N/A</span></div>
+                </div>
+                <div class="info-panel story-konan">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis deserunt architecto dignissimos ex blanditiis beatae! Sequi atque nemo qui aliquid?</div>
+            </div>
+
+            <!-- Deidara -->
+            <div id="deidara-info">
+                <div class="info-panel deidara-info">
+                    <div class="info-lines"><span class="info-tag">IGN</span><span class="info-text">NINJA</span></div>
+                    <div class="info-lines"><span class="info-tag">Gender</span><span class="info-text">Male</span></div>
+                    <div class="info-lines"><span class="info-tag">Rank</span><span class="info-text glitch" data-text="Mythic">Mythic</span></div>
+                    <div class="info-lines"><span class="info-tag">Roles</span><span class="info-text">Mage / Tank / Fighter</span>
+                    </div>
+                </div>
+                <div class="info-panel story-deidara">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis deserunt
+                    architecto dignissimos ex blanditiis beatae! Sequi atque nemo qui aliquid?</div>
+            </div>
+
+
+            <!-- Obito -->
+            <div id="obito-info">
+                <div class="info-panel obito-info">
+                    <div class="info-lines"><span class="info-tag">IGN</span><span class="info-text">うちはマダラ</span></div>
+                    <div class="info-lines"><span class="info-tag">Gender</span><span class="info-text">Male</span></div>
+                    <div class="info-lines"><span class="info-tag">Rank</span><span class="info-text glitch" data-text="Mythic">Mythic</span></div>
+                    <div class="info-lines"><span class="info-tag">Roles</span><span class="info-text">Assassin / Pro Tigreal</span>
+                    </div>
+                </div>
+                <div class="info-panel story-obito">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis deserunt
+                    architecto dignissimos ex blanditiis beatae! Sequi atque nemo qui aliquid?</div>
+            </div>
+
+            <!-- Itachi -->
+            <div id="itachi-info">
+                <div class="info-panel itachi-info">
+                    <div class="info-lines"><span class="info-tag">IGN</span><span class="info-text">サンマメルツ</span></div>
+                    <div class="info-lines"><span class="info-tag">Gender</span><span class="info-text">Male</span></div>
+                    <div class="info-lines"><span class="info-tag">Rank</span><span class="info-text glitch" data-text="Mythic">Mythic</span></div>
+                    <div class="info-lines"><span class="info-tag">Roles</span><span class="info-text">Marksman</span>
+                    </div>
+                </div>
+                <div class="info-panel story-itachi">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis deserunt
+                    architecto dignissimos ex blanditiis beatae! Sequi atque nemo qui aliquid?</div>
+            </div>
+
+            <!-- Hidan -->
+            <div id="hidan-info">
+                <div class="info-panel hidan-info">
+                    <div class="info-lines"><span class="info-tag">IGN</span><span class="info-text glitch"
+                            data-text="[PT] キリン">[PT] キリン</span></div>
+                    <div class="info-lines"><span class="info-tag">Gender</span><span class="info-text">Male</span></div>
+                    <div class="info-lines"><span class="info-tag">Rank</span><span class="info-text glitch"
+                            data-text="Mythic">Mythic</span></div>
+                    <div class="info-lines"><span class="info-tag">Roles</span><span class="info-text glitch"
+                            data-text="Fighter / Mage / Tank / Assassin">Fighter / Mage / Tank / Assassin</span>
+                    </div>
+                </div>
+                <div class="info-panel story-hidan">Started playing in 2017. First Squad was Zombie (ZxZ). Second is Akatsuki (AkT).
+                    Unoffical squad Phantom Troupes (PT).</div>
+            </div>
+
+            <!-- Unset -->
+            <div id="unset-info">
+                <div class="unset-info">
+                    <div class="info-unset"><span class="info-tag" data-text="No Information Available">No Information Available</span></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- Overylay transparent, z-index is 80, when member is triggered, z-index is 200 (by .background-dark) -->
+        <div class="overlay-dark"></div>
+        <div class="member-overlay" id="memberOverlay"></div>
+    </div>
+
+    <div class="fullscreen-menu">
+        <ul>
+            <li><a href="./squad.html">Sqaud</a></li>
+            <li><a href="./member.html">Members</a></li>
+            <P>Want to join Akatsuki Squad, <a href="">write us!</a></P>
+        </ul>
+    </div>
+    <button class="trigger-button"></button>
+
+
+    <!-- Preload-it JS -->
+    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js/loader.js"></script> <!-- Load CSS File -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
