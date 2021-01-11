@@ -31,7 +31,7 @@ $naruto-yellow: #efb531;
 
 /* Only for landscape */
 .potrait-warning {
-    z-index: 2000;
+    z-index: 5000;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -601,7 +601,7 @@ body {
         transition: all 0.4s ease 0.1s;   
           
         &:hover {
-            color: #332a2a;
+            color:hsla(9, 69%, 50%, 0.39);
             text-decoration: none;
         }
     }
@@ -742,7 +742,7 @@ $t-border: #f04729;
     from {
         opacity: 0.4;
     }
-    top {
+    to {
         opacity: 1;
     }
 }

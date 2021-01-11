@@ -10586,8 +10586,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* Only for landscape */
 .potrait-warning {
-  z-index: 2000;
-  display: -ms-grid;
+  z-index: 5000;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -10606,7 +10605,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .potrait-warning span {
   margin: 0 auto;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #2e2e2e;
 }
 
@@ -11031,15 +11030,10 @@ body a:hover {
 
 /* Trigger side-bar members list */
 .trigger-sidebar {
-  z-index: 400;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  cursor: pointer;
   display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-content: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   right: 1rem;
@@ -11052,6 +11046,7 @@ body a:hover {
   background: rgba(211, 10, 10, 0.4);
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  z-index: 500;
 }
 
 .trigger-sidebar span {
@@ -11201,7 +11196,7 @@ body a:hover {
 }
 
 .fullscreen-menu li a:hover {
-  color: #332a2a;
+  color: hsla(9, 69%, 50%, 0.39);
   text-decoration: none;
 }
 
